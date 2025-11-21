@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPU Check</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="1" height="1" style="display:none;"></canvas>
+  <button id="btn">Get Info</button>
+  <div id="output"></div>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const canvas = document.getElementById("canvas");
+    
+    btn.onclick = function () {
+        const gl = canvas.getContext("webgl");
+    
+        const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+        const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+        const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+    
+        document.getElementById("output").innerHTML = `<div>Vendor: ${vendor}</div><div>Renderer: ${renderer}</div>`;
+    };
+  </script>
+</body>
+
+</html>
