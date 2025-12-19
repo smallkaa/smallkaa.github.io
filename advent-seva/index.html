@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвент Календарь</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <!-- View for the task -->
+        <div id="task-view">
+            <h1 id="task-title"></h1>
+            <p id="task-text"></p>
+            <img id="task-image" class="hidden" />
+
+            <p id="error-message" class="hidden"></p>
+            <p id="hint-message" class="hidden"></p>
+            <input type="text" id="answer-input" placeholder="Введи ответ здесь">
+            <button id="submit-button">Проверить ответ</button>
+        </div>
+
+        <!-- View for success -->
+        <div id="success-view" class="hidden">
+            <p class="emoji">🎉</p>
+            <h1 id="success-message"></h1>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
