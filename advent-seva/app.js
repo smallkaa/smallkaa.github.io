@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Do nothing on empty input
         }
 
+        if ([2, 3, 4].includes(currentTask.id)) {
+            state = 'correct';
+            localStorage.setItem(storageKey, state);
+            render();
+            return;
+        }
+
         const correctAnswer = String(currentTask.correctAnswer).trim();
         
         // Simple, case-insensitive, space-insensitive comparison
